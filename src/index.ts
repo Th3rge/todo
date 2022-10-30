@@ -1,5 +1,9 @@
 import app from "./app";
 import connection from "./connection";
+import createUser from "./endpoints/createUser";
+
+app.put('/user', createUser)
+
 
 app.get("/user", async (req, res) => {
     try {
@@ -14,6 +18,7 @@ app.get("/user", async (req, res) => {
         res.status(400).send(error.sqlMessage || error.message)
     }
 })
+
 
 app.post("/user", async (req, res)=> {
     try {      
@@ -32,6 +37,7 @@ app.post("/user", async (req, res)=> {
         res.status(400).send(error.sqlMessage || error.message)
     }
 })
+
 
 app.get("/user/:id", async (req, res) => {
     try {

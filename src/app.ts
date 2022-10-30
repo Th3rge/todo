@@ -10,7 +10,7 @@ app.use(cors())
 const server = app.listen(process.env.DB_PORT || 3003, ()=>{
     if(server){
         const address = server.address() as AddressInfo
-        console.log("Thergezin is on Fire")
+        console.log(`Thergezin is on Fire! Server está rodando em : http://localhost:${address.port}`)
     }else{
         console.error("Deu ruim parceirin!")
     }
